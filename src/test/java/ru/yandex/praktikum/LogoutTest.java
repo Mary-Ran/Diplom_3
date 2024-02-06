@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -36,6 +37,7 @@ public class LogoutTest {
     }
 
     @Test
+    @Description("Проверка выхода из аккаунта по кнопке 'Выход' в личном кабинете")
     public void checkLogoutUsingTheExitButton() {
         ElementsToolbar elementsToolbar = new ElementsToolbar(webDriver);
         LoginPage loginPage = new LoginPage(webDriver);

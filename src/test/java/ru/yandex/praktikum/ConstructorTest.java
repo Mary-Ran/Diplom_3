@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.Description;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +15,7 @@ public class ConstructorTest {
     private VerificationSteps verificationSteps;
     private UserSteps userSteps;
     private MainPage mainPage;
-    private final String expectedClassName = "tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect";
+    private String expectedInClassName = "current";
 
     @Before
     public void setup() {
@@ -28,28 +29,31 @@ public class ConstructorTest {
     }
 
     @Test
+    @Description("Проверка перехода к разделу 'Соусы' в конструкторе")
     public void checkTheTransitionToTheSaucesSection() {
         mainPage.clickOnTheSaucesSection();
 
         String actualClassName = mainPage.getClassAttributeForTheSaucesSection();
-        verificationSteps.checkThatActualClassNameEqualExpectedClassName(expectedClassName, actualClassName);
+        verificationSteps.checkThatActualClassNameContainsExpectedInClassName(actualClassName, expectedInClassName);
     }
 
     @Test
+    @Description("Проверка перехода к разделу 'Начинки' в конструкторе")
     public void checkTheTransitionToTheFillingsSection() {
         mainPage.clickOnTheFillingsSection();
 
         String actualClassName = mainPage.getClassAttributeForTheFillingsSection();
-        verificationSteps.checkThatActualClassNameEqualExpectedClassName(expectedClassName, actualClassName);
+        verificationSteps.checkThatActualClassNameContainsExpectedInClassName(actualClassName, expectedInClassName);
     }
 
     @Test
+    @Description("Проверка перехода к разделу 'Булки' в конструкторе")
     public void checkTheTransitionToTheBunsSection() {
         mainPage.clickOnTheSaucesSection();
         mainPage.clickOnTheBunsSection();
 
         String actualClassName = mainPage.getClassAttributeForTheBunsSection();
-        verificationSteps.checkThatActualClassNameEqualExpectedClassName(expectedClassName, actualClassName);
+        verificationSteps.checkThatActualClassNameContainsExpectedInClassName(actualClassName, expectedInClassName);
     }
 
     @After

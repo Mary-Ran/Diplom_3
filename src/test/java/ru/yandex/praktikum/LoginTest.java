@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Assert;
@@ -44,6 +45,7 @@ public class LoginTest {
     }
 
     @Test
+    @Description("Проверка входа через кнопку 'Войти в аккаунт' на главной странице")
     public void checkSuccessfulLoginUsingTheLoginToAccountButton() {
         mainPage.waitWhenLoginToAccountButtonToBeClickable();
         mainPage.clickLoginToAccountButton();
@@ -55,6 +57,7 @@ public class LoginTest {
     }
 
     @Test
+    @Description("Проверка входа через кнопку 'Личный кабинет' на главной странице")
     public void checkSuccessfulLoginUsingThePersonalAccountButton() {
         elementsToolbar.waitWhenPersonalAccountButtonToBeClickable();
         elementsToolbar.clickPersonalAccountButton();
@@ -66,6 +69,7 @@ public class LoginTest {
     }
 
     @Test
+    @Description("Проверка входа через кнопку 'Войти' на странице регистрации")
     public void checkSuccessfulLoginUsingTheLoginButtonInRegisterPage() {
         elementsToolbar.waitWhenPersonalAccountButtonToBeClickable();
         elementsToolbar.clickPersonalAccountButton();
@@ -79,6 +83,7 @@ public class LoginTest {
     }
 
     @Test
+    @Description("Проверка входа через кнопку 'Войти' на странице восстановления пароля")
     public void checkSuccessfulLoginUsingTheRestorePasswordButtonInRestorePasswordPage() {
         elementsToolbar.waitWhenPersonalAccountButtonToBeClickable();
         elementsToolbar.clickPersonalAccountButton();

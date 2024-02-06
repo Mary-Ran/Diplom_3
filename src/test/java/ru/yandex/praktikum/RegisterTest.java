@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -40,6 +41,7 @@ public class RegisterTest {
     }
 
     @Test
+    @Description("Проверка успешной регистрации")
     public void checkSuccessfulRegister() {
         password = RandomStringUtils.randomAlphanumeric(10);
         elementsToolbar.waitWhenPersonalAccountButtonToBeClickable();
@@ -53,6 +55,7 @@ public class RegisterTest {
     }
 
     @Test
+    @Description("Проверка регистрации с некорректным паролем")
     public void checkEnterAFiveCharactersInPasswordField() {
         password = RandomStringUtils.randomAlphanumeric(5);
         elementsToolbar.waitWhenPersonalAccountButtonToBeClickable();

@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Assert;
@@ -50,6 +51,7 @@ public class TransitionBetweenPagesTest {
     }
 
     @Test
+    @Description("Проверка перехода в личный кабинет по клику на кнопку 'Личный кабинет'")
     public void checkGoToPersonalAccountFromTheMainPage() {
         elementsToolbar.clickPersonalAccountButton();
         profilePage.waitWhenTheExitButtonIsVisible();
@@ -58,6 +60,7 @@ public class TransitionBetweenPagesTest {
     }
 
     @Test
+    @Description("Проверка перехода на главную страницу по клику на 'Конструктор'")
     public void checkClickingTheConstructorButtonInThePersonalAccount() {
         elementsToolbar.clickPersonalAccountButton();
         profilePage.waitWhenTheExitButtonIsVisible();
@@ -68,6 +71,7 @@ public class TransitionBetweenPagesTest {
     }
 
     @Test
+    @Description("Проверка перехода на главную страницу по клику на логотип Stellar Burgers")
     public void checkClickingTheStellarBurgersLogoInThePersonalAccount() {
         elementsToolbar.clickPersonalAccountButton();
         profilePage.waitWhenTheExitButtonIsVisible();

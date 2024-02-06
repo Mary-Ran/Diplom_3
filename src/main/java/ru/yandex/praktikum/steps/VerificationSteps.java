@@ -6,8 +6,8 @@ import org.junit.Assert;
 public class VerificationSteps {
 
     @Step("Check that actual class name equal expected class name")
-    public void checkThatActualClassNameEqualExpectedClassName(String expectedClassName, String actualClassName) {
-        Assert.assertEquals(expectedClassName, actualClassName);
+    public void checkThatActualClassNameContainsExpectedInClassName(String actualClassName, String expectedInClassName) {
+        Assert.assertTrue(actualClassName.contains(expectedInClassName));
     }
 
     @Step("Check that actual error text equal expected error text")
